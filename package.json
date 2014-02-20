@@ -1,0 +1,22 @@
+{
+  "name": "mailchimp-export",
+  "version": "0.1.0",
+  "description": "Mailchimp Export API",
+  "main": "index.js",
+  "author": "Maurício Kishi <mauriciokishi@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mrkishi/mailchimp-export.git"
+  },
+  "bugs": {
+    "url": "http://github.com/mrkishi/mailchimp-export/issues"
+  },
+  "homepage": "http://github.com/mrkishi/mailchimp-export",
+  "license": "MIT",
+  "engines": [
+    "node >= 0.10.0"
+  ],
+  "dependencies": {
+    "request": "~2"
+  }
+}
