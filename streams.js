@@ -33,7 +33,7 @@ var Stringified = function () {
 	this.push('[');
 };
 
-util.inherits(Text, stream.Transform);
+util.inherits(Stringified, stream.Transform);
 
 Stringified.prototype._transform = function (chunk, encoding, callback) {
 	if (this.started) {
