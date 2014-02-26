@@ -1,6 +1,6 @@
 {
   "name": "mailchimp-export",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Mailchimp Export API",
   "main": "index.js",
   "author": "Maurício Kishi <mauriciokishi@gmail.com>",
