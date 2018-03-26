@@ -52,14 +52,14 @@ Stringified.prototype._flush = function (callback) {
 };
 
 // Output JSON objects
-var JSON = function () {
+var JSONstream = function () {
 	stream.Transform.call(this);
 	this._readableState.objectMode = true;
 };
 
-util.inherits(JSON, stream.Transform);
+util.inherits(JSONstream, stream.Transform);
 
-JSON.prototype._transform = function (chunk, encoding, callback) {
+JSONstream.prototype._transform = function (chunk, encoding, callback) {
 	try {
 		if (chunk) {
 			this.push(JSON.parse(chunk));
@@ -72,6 +72,6 @@ JSON.prototype._transform = function (chunk, encoding, callback) {
 
 module.exports = {
 	split: Split,
-	json: JSON,
+	json: JSONstream,
 	stringified: Stringified,
 };
