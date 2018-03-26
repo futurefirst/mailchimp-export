@@ -1,6 +1,7 @@
 
 var util = require('util');
 var stream = require('stream');
+var zipObject = require('lodash.zipobject');
 
 // Split lines
 var Split = function () {
@@ -62,7 +63,11 @@ util.inherits(JSONstream, stream.Transform);
 JSONstream.prototype._transform = function (chunk, encoding, callback) {
 	try {
 		if (chunk) {
-			this.push(JSON.parse(chunk));
+			if (this.headers) {
+				this.push(zipObject(this.headers, JSON.parse(chunk)));
+			} else {
+				this.headers = JSON.parse(chunk);
+			}
 		}
 		callback();
 	} catch (error) {
